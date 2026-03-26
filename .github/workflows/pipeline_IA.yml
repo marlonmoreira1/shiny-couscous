@@ -1,0 +1,70 @@
+name: Gemini Classifications Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    strategy:
+      # matrix will contain 20 items; see below (you'll paste/generated list)
+      matrix:
+        include:
+          - start: 12000
+            end: 12500
+            gemini_secret: GEMINI_API_KEY
+          - start: 12500
+            end: 13000
+            gemini_secret: GEMINI_API_KEY_MARCUS
+          - start: 13000
+            end: 13500
+            gemini_secret: GEMINI_API_KEY_JONATAN
+          - start: 13500
+            end: 14000
+            gemini_secret: GEMINI_API_KEY_WADE
+          - start: 14000
+            end: 14500
+            gemini_secret: GEMINI_API_KEY_JORGE
+          - start: 14500
+            end: 15001
+            gemini_secret: GEMINI_API_KEY_VIDTEK
+          
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        repository: marlonmoreira1/sturdy-fishstick
+        token: ${{ secrets.MY_PRIVATE_TOKEN }}
+        path: pv
+
+
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "credentials.json"
+        json: ${{ secrets.STORAGE_KEY }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run ETL script
+      env:
+        START_INDEX: ${{ matrix.start }}
+        END_INDEX:   ${{ matrix.end }}
+        STORAGE_KEY: ${{ secrets.STORAGE_KEY }}        
+        API_KEY: ${{ secrets.API_KEY }}
+        GEMINI_API_KEY: ${{ secrets[matrix.gemini_secret] }}
+        
+      run: |
+        python pv/gemini_classification.py
