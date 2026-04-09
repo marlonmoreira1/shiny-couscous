@@ -12,22 +12,22 @@ jobs:
       matrix:
         include:
           - start: 9000
-            end: 9500
+            end: 9100
             gemini_secret: GEMINI_API_KEY
-          - start: 9500
-            end: 10000
+          - start: 9100
+            end: 9200
             gemini_secret: GEMINI_API_KEY_MARCUS
-          - start: 10000
-            end: 10500
+          - start: 9200
+            end: 9300
             gemini_secret: GEMINI_API_KEY_JONATAN
-          - start: 10500
-            end: 11000
+          - start: 9300
+            end: 9400
             gemini_secret: GEMINI_API_KEY_WADE
-          - start: 11000
-            end: 11500
+          - start: 9400
+            end: 9450
             gemini_secret: GEMINI_API_KEY_JORGE
-          - start: 11500
-            end: 12000
+          - start: 9450
+            end: 9500
             gemini_secret: GEMINI_API_KEY_VIDTEK
           
 
