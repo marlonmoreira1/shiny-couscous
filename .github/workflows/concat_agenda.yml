@@ -1,7 +1,7 @@
 name: Concat Agenda Live Data
 on:
   schedule:
-      - cron: '35 3 * * *'
+      - cron: '45 6 * * *'
   workflow_dispatch:
 jobs:
   run-pipeline:
