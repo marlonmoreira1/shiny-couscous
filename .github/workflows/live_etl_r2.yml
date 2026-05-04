@@ -1,7 +1,7 @@
 name: R2 ETL Agenda
 on:
   schedule:
-      - cron: '55 04 * * *'
+      - cron: '43 04 * * *'
   workflow_dispatch:
 jobs:
   run-pipeline:
