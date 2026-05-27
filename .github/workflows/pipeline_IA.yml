@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - start: 17500
-            end: 18000
+            end: 17600
             gemini_secret: GEMINI_API_KEY
           - start: 18000
             end: 18500
@@ -24,10 +24,10 @@ jobs:
             end: 19500
             gemini_secret: GEMINI_API_KEY_WADE
           - start: 19500
-            end: 20000
+            end: 20001
             gemini_secret: GEMINI_API_KEY_JORGE
-          - start: 20000
-            end: 20500
+          - start: 17600
+            end: 18000
             gemini_secret: GEMINI_API_KEY_VIDTEK
           
 
