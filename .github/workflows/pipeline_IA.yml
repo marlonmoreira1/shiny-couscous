@@ -11,23 +11,23 @@ jobs:
       # matrix will contain 20 items; see below (you'll paste/generated list)
       matrix:
         include:
-          - start: 0
-            end: 500
+          - start: 3000
+            end: 3500
             gemini_secret: GEMINI_API_KEY
-          - start: 500
-            end: 1000
+          - start: 3500
+            end: 4000
             gemini_secret: GEMINI_API_KEY_MARCUS
-          - start: 1000
-            end: 1500
+          - start: 4000
+            end: 4500
             gemini_secret: GEMINI_API_KEY_JONATAN
-          - start: 1500
-            end: 2000
+          - start: 4500
+            end: 5000
             gemini_secret: GEMINI_API_KEY_WADE
-          - start: 2000
-            end: 2500
+          - start: 5000
+            end: 5500
             gemini_secret: GEMINI_API_KEY_JORGE
-          - start: 2500
-            end: 3000
+          - start: 5500
+            end: 6000
             gemini_secret: GEMINI_API_KEY_VIDTEK
           
 
