@@ -1,7 +1,7 @@
 name: Daily Feed YouTube
 on:
   schedule:
-        - cron: '12 9 * * *'
+        - cron: '10 5 * * *'
   workflow_dispatch:
 jobs:
   run-pipeline:
