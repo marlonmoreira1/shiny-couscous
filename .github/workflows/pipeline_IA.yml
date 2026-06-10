@@ -20,14 +20,14 @@ jobs:
           - start: 9300
             end: 9500
             gemini_secret: GEMINI_API_KEY_JONATAN
-          - start: 10000
-            end: 10100
+          - start: 9500
+            end: 9600
             gemini_secret: GEMINI_API_KEY_WADE
-          - start: 10100
-            end: 10300
+          - start: 9600
+            end: 9800
             gemini_secret: GEMINI_API_KEY_JORGE
-          - start: 10300
-            end: 105000
+          - start: 9800
+            end: 10000
             gemini_secret: GEMINI_API_KEY_VIDTEK
           
 
