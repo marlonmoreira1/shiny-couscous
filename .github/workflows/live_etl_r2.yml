@@ -1,7 +1,6 @@
 name: R2 ETL Agenda
 on:
-  schedule:
-      - cron: '45 11 * * *'
+  schedule:      
       - cron: '20 12 * * *'
   workflow_dispatch:
 jobs:
