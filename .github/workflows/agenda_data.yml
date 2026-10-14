@@ -1,7 +1,6 @@
 name: Daily Agenda Live Data
 on:
-  schedule:
-      - cron: '03 10 * * *'
+  schedule:      
       - cron: '00 12 * * *'
   workflow_dispatch:
 jobs:
